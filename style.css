@@ -1,4 +1,4 @@
-/* リセットCSS */
+/* 共通スタイル */
 * {
     margin: 0;
     padding: 0;
@@ -6,86 +6,790 @@
 }
 
 body {
-    font-family: 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS Mincho", serif;
+    background-color: #ffffff;
+    color: #333333;
     line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
 }
 
-/* ヘッダーナビゲーション */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダースタイル */
 header {
-    background-color: #343a40;
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #7986d5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
-nav ul {
-    list-style: none;
+.header-content {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
 }
 
-nav li {
-    display: inline;
+.logo-section {
+    display: flex;
+    align-items: center;
 }
 
-nav a {
-    color: white;
+.logo-section img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* PCナビゲーション */
+.nav-pc {
+    display: flex;
+    gap: 0;
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333333;
+    transition: background-color 0.3s;
+}
+
+.dropdown-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    font-weight: 500;
+    display: block;
+    transition: background-color 0.3s;
 }
 
-nav a:hover {
-    background-color: #495057;
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
 }
 
-nav a:focus {
-    outline: 2px solid #007bff;
-    outline-offset: 2px;
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* モバイルナビゲーション */
+.nav-mobile {
+    display: none;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #333333;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu a:hover {
+    background-color: #f0f0f0;
 }
 
 /* メインコンテンツ */
 main {
     min-height: calc(100vh - 80px);
+}
+
+/* ホームページスタイル */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('image/background2.png'); /* 背景画像 */
+    background-repeat: no-repeat;           /* 繰り返さない */
+    background-position: center center;     /* 中央配置 */
+    background-size: cover;                 /* 全体をカバー */
+    background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);/* 画像が表示されない場合の色 */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    overflow: hidden;
+    padding-top: 80px;
 }
 
-.container {
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
     text-align: center;
-    background-color: white;
-    padding: 3rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    max-width: 800px;
-    width: 100%;
+    padding: 40px;
+    border-radius: 10px;
 }
 
-h1 {
-    font-size: 2rem;
-    color: #343a40;
-    margin-bottom: 1rem;
+.countdown {
+    font-size: 3em;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.visitor-count {
+    font-size: 3em;
+    margin: 20px 0;
+    color: #FFD700;
+    text-shadow: 1px 2px 2px #ffffff;
+}
+
+.current-time {
+    font-size: 2.0em;
+    margin-bottom: 10px;
+}
+
+/* 受付・来場者数ページスタイル */
+.reception-page {
+    background-color: #ffffff;
+    padding: 40px 20px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.visitor-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 60px 40px;
+    font-size: 2.5em;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.visitor-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.visitor-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #2980b9;
+}
+
+.small-buttons {
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.visitor-btn-small {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 30px 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.visitor-btn-small:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.visitor-btn-small:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #2980b9;
+}
+
+.nav-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* 来場者数ページスタイル */
+.visitor-count-page {
+    padding: 40px 20px;
+}
+
+.total-visitors {
+    text-align: center;
+    font-size: 3em;
+    color: #3498db;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.visitors-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.visitors-table th,
+.visitors-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.visitors-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+.control-buttons {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reset-btn, .download-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.download-btn {
+    background-color: #27ae60;
+}
+
+.reset-btn:hover {
+    background-color: #c0392b;
+}
+
+.download-btn:hover {
+    background-color: #229954;
+}
+
+/* 投票ページスタイル */
+.voting-page {
+    background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* ここに背景画像を挿入 */
+/* .voting-page {
+    background-image: url('image/voting-background.jpg');
+    background-size: cover;
+    background-position: center;
+} */
+
+.voting-tabs {
+  position: fixed;
+  top: 140px; /* ヘッダー80px + vote-count-display高さ(約60px) */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  z-index: 1002;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.tab-btn.active {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.voting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 170px auto 0px auto;
+}
+
+.vote-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.vote-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.vote-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.vote-item h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.voting-status {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 30px 50px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.5em;
+    display: none;
+}
+
+.vote-count-display {
+  position: fixed;
+  top: 80px; /* ヘッダーの高さ分下げる */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px 30px;
+  border-radius: 25px;
+  color: #8e44ad;
+  font-weight: bold;
+  font-size: 1.2em;
+  z-index: 1001; /* ヘッダーより上 */
+}
+
+
+.nav-button-left{
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav-button-right {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav-buttons-right {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    gap: 10px;    
+}
+
+/* 投票作成・結果ページ */
+.voting-admin {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+}
+
+.admin-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #8e44ad;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #8e44ad;
+    outline: none;
+}
+
+.btn-primary {
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #7d3c98;
+}
+
+.projects-list {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.projects-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.projects-table th,
+.projects-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.projects-table th {
+    background-color: #8e44ad;
+    color: white;
+}
+
+/* シフト・マニュアルページ */
+p {
+    font-size: 18px;
+    text-align: left;
+    margin: 5px auto;
+}
+
+.shift-page {
+    padding: 40px 20px;
+}
+
+.shift-embed {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.manual-section {
+    margin-bottom: 40px;
+}
+
+.manual-section h2 {
+    color: #333;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.table-of-contents {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.table-of-contents ul {
+    list-style: none;
+}
+
+.table-of-contents li {
+    margin-bottom: 8px;
+}
+
+.table-of-contents a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.table-of-contents a:hover {
+    color: #2980b9;
+}
+
+/* その他ページ */
+.other-pages {
+    padding: 40px 20px;
+}
+
+.projects-grid {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.projects-grid th,
+.projects-grid td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.projects-grid th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+.projects-grid th:nth-child(1) { width: 16.67%; }
+.projects-grid th:nth-child(2) { width: 16.67%; }
+.projects-grid th:nth-child(3) { width: 16.67%; }
+.projects-grid th:nth-child(4) { width: 50%; }
+
+.links-list {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.links-list ul {
+    list-style: none;
+}
+
+.links-list li {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.links-list li:hover {
+    background: #e9ecef;
+}
+
+.links-list a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.links-list a:hover {
+    color: #2980b9;
 }
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
+    .nav-pc {
+        display: none;
     }
     
+    .nav-mobile {
+        display: block;
+    }
+    
+    .hero-section {
+        height: 100vh;
+    }
+    
+    .hero-overlay {
+        padding: 20px;
+    }
+    
+    .countdown {
+        font-size: 1.5em;
+    }
+    
+    .visitor-count {
+        font-size: 2em;
+    }
+    
+    .button-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .small-buttons {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .visitor-btn {
+        padding: 40px 20px;
+        font-size: 2em;
+    }
+    
+    .visitor-btn-small {
+        padding: 20px 10px;
+        font-size: 1.2em;
+    }
+    
+    .voting-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .control-buttons {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .nav-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+    }
+    
+    .projects-grid th:nth-child(1) { width: 20%; }
+    .projects-grid th:nth-child(2) { width: 20%; }
+    .projects-grid th:nth-child(3) { width: 20%; }
+    .projects-grid th:nth-child(4) { width: 40%; }
+}
+
+@media (max-width: 480px) {
     .container {
-        padding: 2rem 1rem;
-        margin: 1rem;
+        padding: 0 10px;
     }
     
-    h1 {
-        font-size: 1.5rem;
+    .hero-overlay {
+        padding: 15px;
+    }
+    
+    .countdown {
+        font-size: 1.2em;
+    }
+    
+    .visitor-count {
+        font-size: 1.8em;
+    }
+    
+    .current-time {
+        font-size: 1em;
+    }
+    
+    .visitor-btn {
+        padding: 30px 15px;
+        font-size: 1.8em;
+    }
+    
+    .voting-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .small-buttons {
+        flex-direction: column;
+        gap: 10px;
     }
 }

@@ -3,27 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page1 - 実験サイト</title>
+    <title>文実スタッフ用Webアプリ - 受付</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="reception-page">
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page1.html">Page1</a></li>
-                <li><a href="page2.html">Page2</a></li>
-                <li><a href="page3.html">Page3</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <div class="logo-section">
+                <!-- ここにロゴ画像を挿入 -->
+                <!-- <img src="image/logo.png" alt="ロゴ"> -->
+                <span class="logo-text">文実</span>
+            </div>
+            
+            <!-- PC用ナビゲーション -->
+            <nav class="nav-pc">
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">受付・来場者</button>
+                    <div class="dropdown-content">
+                        <a href="page1.html">受付</a>
+                        <a href="page2.html">来場者数</a>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">投票システム</button>
+                    <div class="dropdown-content">
+                        <a href="page3.html">投票</a>
+                        <a href="page4.html">投票結果</a>
+                        <a href="page5.html">投票作成</a>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">シフト管理</button>
+                    <div class="dropdown-content">
+                        <a href="page6.html">シフト</a>
+                        <a href="page7.html">シフトマニュアル</a>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">その他</button>
+                    <div class="dropdown-content">
+                        <a href="page8.html">資材移動</a>
+                        <a href="page9.html">企画一覧</a>
+                        <a href="page10.html">リンク集</a>
+                    </div>
+                </div>
+                
+                <a href="index.html" class="dropdown-btn">ホーム</a>
+            </nav>
+            
+            <!-- モバイル用ナビゲーション -->
+            <nav class="nav-mobile">
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="mobile-menu">
+                    <a href="index.html">ホーム</a>
+                    <a href="page1.html">受付</a>
+                    <a href="page2.html">来場者数</a>
+                    <a href="page3.html">投票</a>
+                    <a href="page4.html">投票結果</a>
+                    <a href="page5.html">投票作成</a>
+                    <a href="page6.html">シフト</a>
+                    <a href="page7.html">シフトマニュアル</a>
+                    <a href="page8.html">資材移動</a>
+                    <a href="page9.html">企画一覧</a>
+                    <a href="page10.html">リンク集</a>
+                </div>
+            </nav>
+        </div>
     </header>
-    
+
     <main>
-        <div class="container">
-            <h1>ここは「page1」ページです。</h1>
+        <div class="reception-page">
+            <div class="container">
+                <h1 style="text-align: center; color: #3498db; margin: 40px 0; font-size: 2.5em;">受付</h1>
+                
+                <!-- メインボタン（1-4人） -->
+                <div class="button-grid">
+                    <button class="visitor-btn" data-count="1">1人</button>
+                    <button class="visitor-btn" data-count="2">2人</button>
+                    <button class="visitor-btn" data-count="3">3人</button>
+                    <button class="visitor-btn" data-count="4">4人</button>
+                </div>
+                
+                <!-- 小さなボタン（5-8人） -->
+                <div class="small-buttons">
+                    <button class="visitor-btn-small" data-count="5">5人</button>
+                    <button class="visitor-btn-small" data-count="6">6人</button>
+                    <button class="visitor-btn-small" data-count="7">7人</button>
+                    <button class="visitor-btn-small" data-count="8">8人</button>
+                </div>
+            </div>
+            
+            <!-- 来場者数ページへの移動ボタン -->
+            <button class="nav-button" onclick="location.href='page2.html'">来場者数へ</button>
         </div>
     </main>
-    
+
     <script src="script.js"></script>
 </body>
 </html>

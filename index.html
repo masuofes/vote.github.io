@@ -3,27 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ホーム - 実験サイト</title>
+    <title>文実スタッフ用Webアプリ - ホーム</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home-page">
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page1.html">Page1</a></li>
-                <li><a href="page2.html">Page2</a></li>
-                <li><a href="page3.html">Page3</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <div class="logo-section">
+                <!-- ここにロゴ画像を挿入 -->
+                <img src="image/logo_Masuofes.png" alt="ロゴ">
+                <span class="logo-text">第46回文化祭実行委員会</span>
+            </div>
+        
+            <!-- PC用ナビゲーション -->
+            <nav class="nav-pc">
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">受付・来場者</button>
+                    <div class="dropdown-content">
+                        <a href="page1.html">受付</a>
+                        <a href="page2.html">来場者数</a>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">投票システム</button>
+                    <div class="dropdown-content">
+                        <a href="page3.html">投票</a>
+                        <a href="page4.html">投票結果</a>
+                        <a href="page5.html">投票作成</a>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">シフト管理</button>
+                    <div class="dropdown-content">
+                        <a href="page6.html">シフト</a>
+                        <a href="page7.html">シフトマニュアル</a>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">その他</button>
+                    <div class="dropdown-content">
+                        <a href="page8.html">資材移動</a>
+                        <a href="page9.html">企画一覧</a>
+                        <a href="page10.html">リンク集</a>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- モバイル用ナビゲーション -->
+            <nav class="nav-mobile">
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="mobile-menu">
+                    <a href="page1.html">受付</a>
+                    <a href="page2.html">来場者数</a>
+                    <a href="page3.html">投票</a>
+                    <a href="page4.html">投票結果</a>
+                    <a href="page5.html">投票作成</a>
+                    <a href="page6.html">シフト</a>
+                    <a href="page7.html">シフトマニュアル</a>
+                    <a href="page8.html">資材移動</a>
+                    <a href="page9.html">企画一覧</a>
+                    <a href="page10.html">リンク集</a>
+                </div>
+            </nav>
+        </div>
     </header>
-    
+
     <main>
-        <div class="container">
-            <h1>ここは「home」ページです。</h1>
+        <section class="hero-section">
+            <div class="hero-overlay">
+                <div class="current-time" id="current-time">
+                    2024/10/04 10:30
+                </div>
+                
+                <div class="countdown" id="countdown">
+                    開催まで残り00d01h30m
+                </div>
+                
+                <div class="visitor-count" id="visitor-count-display">
+                    現在の来場者数: <bold>0</bold>人
+                </div>
+            </div>
+        </section>
+        <div class="other-pages">
+            <div class="container">
+                <h1 style="text-align: center; color: #333; margin: 40px 0; font-size: 2.5em;">資材移動</h1>
+                
+                <!-- 目次 -->
+                <div class="table-of-contents">
+                    <h2>資材移動項目一覧</h2>
+                    <ul>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1nbBXA25PS5MxObsbLiwWNQjmedr7H-OegplHgfruRpM/edit?usp=drive_link">1. 1年1組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/15jUT8fdW5093dO7ChEaOIUqxgFuR04JZn_dSxCRX0DI/edit?usp=drive_link">2. 1年2組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1woKTrMOwHfViWNr0r8vYX4QYR3pL4Qghyenv__qxKIY/edit?usp=drive_link">3. 1年3組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1VhvKx_qciICmPqg5QOiiHa2PLyU_AyDNieeqqy5zQ3I/edit?usp=drive_link">4. 1年4組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1Wfqe58q29mH261MwrJQV4CjuV8CqXQkB2xqDqXE91TQ/edit?usp=drive_link">5. 1年5組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1vDll25Gtul197iq54Wyuh2ubgrfdzGD6e2NnYANqdCY/edit?usp=drive_link">6. 1年6組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1XgwIRdXbhkq3ASabXs26w90BWTIuOrPRpssB5VFNmhU/edit?usp=drive_link">7. 1年7組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1J7pI9zgNwzvcfo0I8qu_hYLO2dI-PgikH6Emj-4r9Kc/edit?usp=drive_link">8. 1年8組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1BSodWyJj-Zds6ZoVzxGtcVHmj4Xq_8bixnTBTDR9izc/edit?usp=drive_link">9. 2年1組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1IJNXwDkwlAfm9yObbGpOf37IIfsql9T_9E10PlsICEE/edit?usp=drive_link">10. 2年2組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1m3qlm-ZsjDnI9yX7oEGxHwkefN0_426jZv3Fk9XnnMw/edit?usp=drive_link">11. 2年3組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1sM0tImKoHWkAJOhp3pUK-kVAUd2gvIQBBC8XE1pmWPw/edit?usp=drive_link">12. 2年4組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1KjPaSbJ3_pGdR6AS4LTvyEJIg_o2XFcPE-cXltwz-8I/edit?usp=drive_link">13. 2年5組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1oP42-qgSjfQrOmhILpQGV90PJlmK2zs3dFO0qF7ElMU/edit?usp=drive_link">14. 2年6組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1I5V49eTZ_cCNIJ0ffh4qMJaAKod29AEsKCa7rfUtR1A/edit?usp=drive_link">15. 2年7組</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/10DnFqeVbv4bsqGT0mMwXd9xq7K5emJpk_WEApm2xblA/edit?usp=drive_link">16. SAKURA Tempesta</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1_H8UVShAW0oL4DagsW5R_s1QrFUgNrvbzGh3oqkyvgE/edit?usp=drive_link">17. アントレプレナーシップ</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1fI-L31zngSuxZ8l4zycS4IzrRgY_6j-pJH87iDMnVN0/edit?usp=drive_link">18. クイズ研究</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1l4GhdLzW7WRIqKDuz7RXOI32HpLXwfNOrYOjJAlIssk/edit?usp=drive_link">19. 高3有志</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1VOBIsNRHxOWCGE4dQ-7yFxaQ_irYIM9lwnrqbcNPv4M/edit?usp=drive_link">20. 高校美術部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1M1iLui6vUd3XyQhstjI16mkL3dlGeGdzD-l6VJur_Bs/edit?usp=drive_link">21. 吹奏楽部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1h59Qfp_VK7qRGWbCfJM7vV0n_JeKTA1QxUeaJFPukPs/edit?usp=drive_link">22. 数学研究サークル</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1eNLn-D8S8joNQI24OJc5K7jA2okXngwp69AuRrIYnpc/edit?usp=drive_link">23. 茶道部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1D9AvEtQAXk0_YqFJOU--d1GOB1-Wh-JBCwhm6bXAntc/edit?usp=drive_link">24. 中学コン部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1O-hL2Hgh1mnZKvRhyJpwHqKib6ghczfai8MTehC4QkU/edit?usp=drive_link">25. 中高ハンドボール部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/11QKS3l4pkyusajgvBR0WW-THEUeyU83JZWJT0yQrf1s/edit?usp=drive_link">26. 中高囲碁将棋部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/143IKS6cJlT-Ly-d-B0fpvH2AzLoiFUbIJgETP730P58/edit?usp=drive_link">27. 中高演劇部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/143IKS6cJlT-Ly-d-B0fpvH2AzLoiFUbIJgETP730P58/edit?usp=drive_link">28. 中高科学部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1Z9ksyujyEf0Oly33osd0rrHTdslCeo1528bYFKo_LD8/edit?usp=drive_link">29. 中高文芸部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1SkF_2Tr0noIRjfcc9IreWTtArW_NykFRZs7_iZ2YdqY/edit?usp=drive_link">30. 鉄道研究部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1xHnx2txD3ncsR8nVtQQrrO4AZHhiww6_c7e5K15W49Q/edit?usp=drive_link">31. 高校コン部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1d35ucOpHzoAOZGQG6mNLLV-q-yARRVQz1DeWgBlRdoY/edit?usp=drive_link">32. PTA  PR部門</PRe></a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1K2a6VVVVyxl8392D_eEqerR_60cBkCKpNqyYl0Bro-A/edit?usp=drive_link">33. PTA バザー部門</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/18mu7HA8g1Mq1qX__paWj3qGNPF34pFPD4ss0OuJoDWM/edit?usp=drive_link">34. PTA 後援部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1KD46cJgl986T2ImJ3ND22LvfF5VKic0uu8yv3Xmr5SE/edit?usp=drive_link">35. PTA 本部</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1ixRids2k4VNo6JorTQ05qqZP0sXQ6KWbcM-pRDtmxcg/edit?usp=drive_link">36. PTA 飲食部門</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1Ajd3ogIF5Nfd0pNxqKhtq7B1zokCAXimvY2aQkOYnHE/edit?usp=drive_link">37. PTA  高3部門</PRe></a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1z2ALWO1jaB-WbMX3HTT7mBZr2lDJ98nABFoXe3ebfBo/edit?usp=drive_link">38. 管理用 交流館横</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1RoqWUpsOpU9K7FeAn9rsm2naw_XyCfERyUGsnVIetUA/edit?usp=drive_link">39. 管理用 備品置き場G</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1YEA4EKgYMUQ9EKn73UHhwmToqgAX6NJv8dfFt9jwle4/edit?usp=drive_link">40. 管理用 備品置き場H</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </main>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
