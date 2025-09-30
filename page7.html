@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文実スタッフ用Webアプリ - シフトマニュアル</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="shift-page">
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <!-- ここにロゴ画像を挿入 -->
+                <!-- <img src="image/logo.png" alt="ロゴ"> -->
+                <span class="logo-text">文実</span>
+            </div>
+            
+            <!-- PC用ナビゲーション -->
+            <nav class="nav-pc">
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">受付・来場者</button>
+                    <div class="dropdown-content">
+                        <a href="page1.html">受付</a>
+                        <a href="page2.html">来場者数</a>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">投票システム</button>
+                    <div class="dropdown-content">
+                        <a href="page3.html">投票</a>
+                        <a href="page4.html">投票結果</a>
+                        <a href="page5.html">投票作成</a>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">シフト管理</button>
+                    <div class="dropdown-content">
+                        <a href="page6.html">シフト</a>
+                        <a href="page7.html">シフトマニュアル</a>
+                    </div>
+                </div>
+                
+                <div class="nav-dropdown">
+                    <button class="dropdown-btn">その他</button>
+                    <div class="dropdown-content">
+                        <a href="page8.html">資材移動</a>
+                        <a href="page9.html">企画一覧</a>
+                        <a href="page10.html">リンク集</a>
+                    </div>
+                </div>
+                
+                <a href="index.html" class="dropdown-btn">ホーム</a>
+            </nav>
+            
+            <!-- モバイル用ナビゲーション -->
+            <nav class="nav-mobile">
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="mobile-menu">
+                    <a href="index.html">ホーム</a>
+                    <a href="page1.html">受付</a>
+                    <a href="page2.html">来場者数</a>
+                    <a href="page3.html">投票</a>
+                    <a href="page4.html">投票結果</a>
+                    <a href="page5.html">投票作成</a>
+                    <a href="page6.html">シフト</a>
+                    <a href="page7.html">シフトマニュアル</a>
+                    <a href="page8.html">資材移動</a>
+                    <a href="page9.html">企画一覧</a>
+                    <a href="page10.html">リンク集</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="shift-page">
+            <div class="container">
+                <h1 style="text-align: center; color: #333; margin: 40px 0; font-size: 2.5em;">シフトマニュアル</h1>
+                
+                <!-- 目次 -->
+                <div class="table-of-contents">
+                    <h2>目次</h2>
+                    <ul>
+                        <li><a href="#section1">1. 受付業務</a></li>
+                        <li><a href="#section2">2. バス停誘導</a></li>
+                        <li><a href="#section3">3. information</a></li>
+                        <li><a href="#section4">4. 参加団体見回り</a></li>
+                        <li><a href="#section5">5. 大体育館ステージ</a></li>
+                        <li><a href="#section6">6. 音楽室</a></li>
+                        <li><a href="#section7">7. 家庭科室</a></li>
+                        <li><a href="#section8">8. 本部待機</a></li>
+                        <li><a href="#section9">9. キッチンカー</a></li>
+                    </ul>
+                </div>
+                
+                <!-- マニュアルセクション -->
+                <div class="manual-section" id="section1">
+                    <h2>1. 受付業務</h2>
+                    <p>【人数と担当部署】</p>
+                    <p>高校文実：3人</p>
+                    <p>中学文実：2人</p>
+                    <p>高校クラス：3人</p>
+                    <p>高校生徒会：2人</p>
+                    <p>中学生徒会：2人</p>
+                    <p>【シフト時間】</p>
+                    <p>1時間</p>
+                    <p>【仕事内容】</p>
+                    <p>主な仕事内容は以下の4つ。</p>
+                    <li><p>来場者がバスで到着し、門を通ったあたりで「受付はこちらです」と声を張り上げて誘導する。</p></li>
+                    <li><p>来場者に何名グループでの来場かを伺い、それをパソコンで記録する。</p></li>
+                    <li><p>リーフレットを一人一部配布する。</p></li>
+                    <li><p>帰られる来場者に投票にご協力いただく。</p></li>
+                    今年度受付は去年と同じくレーン方式で行う（レーンは8レーン）。各レーン一人あるいは二人であたる。
+                    来場者はレーンの存在やそもそも受付があることを知らないので、声を張り上げて誘導を行う。
+                    事前に各レーンにおいてあるパソコンにはhtmlファイルまたはサイトが開いてあるはずなので、それを使用し、人数を記録する。もし、来場者の人数が選択肢になかった場合は2回に分けて合計が同じになればよい。また、「結果表示ページ」は開いてもよいが、リセットは絶対にしないようにすること。
+                    人数記録が済んだら、リーフレットをお渡しする。この時、または去り際に一言何か言えるとよい。（「それでは、どうぞお楽しみください！」みたいな感じで）
+                    投票は受付と同じサイトから投票用のページを開き、来場者に画面を提示する形でご協力していただく。出来る限り、協力していただきたいが、来場者が時間を急いでいたりするときは場合に応じて対応すること。また、お帰りの方が多い時間帯はサイトを使ってその場でご回答いただくのではなく、バスを並んでいるときやバス内、帰りの電車の中などでformで協力いただくよう声掛けを行う。
+
+                </div>
+                
+                <div class="manual-section" id="section2">
+                    <h2>2. バス停誘導</h2>
+                    <p>ここに受付業務についての説明を記入してください。</p>
+                </div>
+                
+                <div class="manual-section" id="section3">
+                    <h2>3. information</h2>
+                    <p>ここに案内業務についての説明を記入してください。</p>
+                </div>
+                
+                <div class="manual-section" id="section4">
+                    <h2>4. 参加団体見回り</h2>
+                    <p>ここに投票業務についての説明を記入してください。</p>
+                </div>
+                
+                <div class="manual-section" id="section5">
+                    <h2>5. 大体育館ステージ</h2>
+                    <p>ここに緊急時対応についての説明を記入してください。</p>
+                </div>
+                
+                <div class="manual-section" id="section6">
+                    <h2>6. 音楽室</h2>
+                    <p>ここに清掃業務についての説明を記入してください。</p>
+                </div>
+                
+                <div class="manual-section" id="section7">
+                    <h2>7. 家庭科室</h2>
+                    <p>ここに設営・撤去についての説明を記入してください。</p>
+                </div>
+                
+                <div class="manual-section" id="section8">
+                    <h2>8. 本部待機</h2>
+                    <p>ここに連絡体制についての説明を記入してください。</p>
+                </div>
+                
+                <div class="manual-section" id="section9">
+                    <h2>9. キッチンカー</h2>
+                    <p>ここに注意事項についての説明を記入してください。</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
