@@ -1,12 +1,234 @@
+
 // 全体で使用する変数
 let visitorData = [];
 let totalVisitors = 0;
 let votingData = [];
+
+// ========================================
+// 修正: 投票選択肢の定義
+// ここに企画を追加・編集してください
+// ========================================
 let projects = {
-    high: [],
-    middle: [],
-    club: []
+    high: [
+        { 
+            name: '監獄島からの大脱出〜君たちはどう脱出（いき）るか〜（1-1）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/1-1_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: '駄菓子屋 めぐみ（1-2）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/1-2_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: '氷貴族-KORIKIZOKU（1-3）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/1-3_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: '居眠りしてただけなのに（1-4）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/1-4_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: 'カジノ芝裏（1-5）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/1-5_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: 'ワ。ーワッフルの焼き加減についてー（1-6）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/1-6_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: 'Bar7（1-7）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/1-7_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: '和風カフェ（1-8）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/1-8_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: '恩田さんのハニーハント（2-1）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/2-1_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: 'カミナガ・ジョーンズ・アドベンチャー（2-2）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/2-2_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: '佐藤健ゴーストビレッジ（2-3）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/2-3_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: '海底2.4万マイル（2-4）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/2-4_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: 'たこせん本舗 竜宮城店（2-5）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/2-5_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: '塔の上のマツンツェル（2-6）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/2-6_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: 'スクールウォーズ　〜生徒の逆襲〜（2-7）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/2-7_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        },
+        { 
+            name: 'ヤッホークロッフル（高3有志）',  // ←企画名をここに記入
+            imageUrl: 'image/poster/high/3-cruffle_pos.png'  // ←画像URLをここに記入（空文字''でも可）
+        }
+        // ↑ここに高校企画を追加する場合は、カンマで区切って上記の形式で追加してください
+    ],
+    middle: [
+        { 
+            name: '中学１年生 音楽発表（1-A）', 
+            imageUrl: 'image/poster/junior-high/1-A_pos.png' 
+        },
+        { 
+            name: 'SIT環境ミュージアム（1-B）', 
+            imageUrl: 'image/poster/junior-high/1-B_pos.png' 
+        },
+        { 
+            name: '中学1年ワークショップ（1-C）', 
+            imageUrl: 'image/poster/junior-high/1-C_pos.png' 
+        },
+        { 
+            name: '１−D○×クイズめぐり！（1-D）', 
+            imageUrl: 'image/poster/junior-high/1-D_pos.png' 
+        },
+        { 
+            name: '中学１年研究展示（1-E）', 
+            imageUrl: 'image/poster/junior-high/1-E_pos.png' 
+        },
+        { 
+            name: 'もっくん（2-A）', 
+            imageUrl: 'image/poster/junior-high/2-A_pos.png' 
+        },
+        { 
+            name: 'ワークショップ・トーハク（2-B）', 
+            imageUrl: 'image/poster/junior-high/2-B_pos.png' 
+        },
+        { 
+            name: '演劇チーム七井（2-C）', 
+            imageUrl: 'image/poster/junior-high/2-C_pos.png' 
+        },
+        { 
+            name: '演劇チーム矢野（2-D）', 
+            imageUrl: 'image/poster/junior-high/2-D_pos.png' 
+        },
+        { 
+            name: '日本文化プレゼンラボ（2-E）', 
+            imageUrl: 'image/poster/junior-high/2-E_pos.png' 
+        },
+        { 
+            name: 'ジオラマ（コモンスペース）', 
+            imageUrl: 'image/poster/junior-high/2-F-common_pos.png' 
+        },
+        { 
+            name: '迷宮迷走なう（3-A）', 
+            imageUrl: 'image/poster/junior-high/3-A_pos.png' 
+        },
+        { 
+            name: 'SHIBAKASHI SECRET FILE〜キミだけが知る学校の裏側〜（3-B）',
+            imageUrl: 'image/poster/junior-high/3-B_pos.png' 
+        },
+        { 
+            name: 'CanderLand〜ムラマッチョをそえて〜（3-C）', 
+            imageUrl: 'image/poster/junior-high/3-C_pos.png' 
+        },
+        { 
+            name: 'キウィたちはどう生きるか in New Zealand（3-D）', 
+            imageUrl: 'image/poster/junior-high/3-D_pos.png' 
+        },
+        { 
+            name: 'シバカシ呪霊界隈（3-E）', 
+            imageUrl: 'image/poster/junior-high/3-E_pos.png' 
+        }
+        // ↑ここに中学企画を追加する場合は、カンマで区切って上記の形式で追加してください
+    ],
+    club: [
+        { 
+            name: '古とのは～カードゲームで遊ぼう～（アントレプレナーシップ）', 
+            imageUrl: 'image/poster/club/club_entrepreneurship_pos.png' 
+        },
+        { 
+            name: 'この一手、君に届けー心をつなぐ盤上の物語ー（中高囲碁将棋部）', 
+            imageUrl: 'image/poster/club/shogi_pos.png' 
+        },
+        { 
+            name: 'ナシ太郎と愉快な七つの大罪たち（中学演劇部）', 
+            imageUrl: 'image/poster/club/club_juniorhigh_drama_pos.png' 
+        },
+        { 
+            name: '高校演劇部（高校演劇部）', 
+            imageUrl: 'image/poster/club/club_high_drama.png' 
+        },
+        { 
+            name: '中高科学部（中高科学部）', 
+            imageUrl: 'image/poster/club/club_high_scienece_pos.png' 
+        },
+        { 
+            name: '弓道体験（高校弓道部）', 
+            imageUrl: 'image/poster/club/club_bow_pos.png' 
+        },
+        { 
+            name: 'シバカシの謎を追え（クイズ研究サークル）', 
+            imageUrl: 'image/poster/club/club_quiz_pos.png' 
+        },
+        { 
+            name: 'Rook in Sibakashi（軽音楽部）', 
+            imageUrl: 'image/poster/club/club_lock_pos.png' 
+        },
+        { 
+            name: 'コン部Lab（中学コンピューター部）', 
+            imageUrl: 'image/poster/club/club_juniorhigh_computer_pos.png' 
+        },
+        { 
+            name: 'コン部なう（高校コンピューター部）', 
+            imageUrl: 'image/poster/club/club_high_computer_pos.png' 
+        },
+        { 
+            name: '御茶処-雅-（茶道部）', 
+            imageUrl: 'image/poster/club/club_tea_pos.png' 
+        },
+        { 
+            name: '外部試合（高校水泳部）', 
+            imageUrl: 'image/poster/club/club_waterpolo_pos.png' 
+        },
+        { 
+            name: '芝吹 Wind Airline 〜音楽で送る世界一周旅行〜（中高吹奏楽部）', 
+            imageUrl: 'image/poster/club/club_music_pos.png' 
+        },
+        { 
+            name: '君の知らない数学（中高数学研究サークル）', 
+            imageUrl: 'image/poster/club/club_math_pos.png' 
+        },
+        { 
+            name: '芝柏ダンス部（中高ダンス部）', 
+            imageUrl: 'image/poster/club/club_high_dance.png' 
+        },
+        { 
+            name: '中高鉄道研究部（中高鉄道研究部）', 
+            imageUrl: 'image/poster/club/club_train_pos.png' 
+        },
+        { 
+            name: '跳べ！狙え！シュートチャレンジ！（中高ハンドボール部）', 
+            imageUrl: 'image/poster/club/club_handball_pos.png' 
+        },
+        { 
+            name: 'クラゲのキーホルダー作り（高校美術部）', 
+            imageUrl: 'image/poster/club/club_art_pos.png' 
+        },
+        { 
+            name: '楽書村（中高文芸部）', 
+            imageUrl: 'image/poster/club/club_bunngei_pos.png' 
+        },
+        { 
+            name: 'スピードガンコンテストwithアイス販売（高校野球部）', 
+            imageUrl: 'image/poster/club/club_baseball_pos.png' 
+        }
+        // ↑ここに部活サークル企画を追加する場合は、カンマで区切って上記の形式で追加してください
+    ]
 };
+// ========================================
+
 let currentVotes = [];
 let voteResults = {};
 
@@ -46,6 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
             initVotingResultPage();
             break;
         case 'voting-create-page':
+            // 修正: 投票作成ページは無効化
             initVotingCreatePage();
             break;
     }
@@ -131,7 +354,7 @@ function updateCountdown() {
 function updateVisitorCount() {
     const visitorCountElement = document.getElementById('visitor-count-display');
     if (visitorCountElement) {
-        // ローカルストレージから来場者数を取得（実際の実装では適切なデータソースから取得）
+        // ローカルストレージから来場者数を取得(実際の実装では適切なデータソースから取得)
         const total = getTotalVisitors();
         visitorCountElement.textContent = `現在の来場者数: ${total}人`;
     }
@@ -162,7 +385,7 @@ function recordVisitor(count) {
     visitorData.push(visitorEntry);
     totalVisitors += count;
     
-    // データをローカルストレージに保存（本来はサーバーサイドで処理）
+    // データをローカルストレージに保存(本来はサーバーサイドで処理)
     localStorage.setItem('visitorData', JSON.stringify(visitorData));
     localStorage.setItem('totalVisitors', totalVisitors.toString());
     
@@ -216,7 +439,7 @@ function updateVisitorTable() {
     if (tableBody) {
         tableBody.innerHTML = '';
         
-        // データを時刻順に表示（最新が上）
+        // データを時刻順に表示(最新が上)
         const sortedData = [...visitorData].reverse();
         
         sortedData.forEach(entry => {
@@ -229,7 +452,7 @@ function updateVisitorTable() {
 
 // 来場者データのリセット
 function resetVisitorData() {
-    if (confirm('本当に来場者データをリセットしますか？この操作は元に戻せません。')) {
+    if (confirm('本当に来場者データをリセットしますか?この操作は元に戻せません。')) {
         visitorData = [];
         totalVisitors = 0;
         localStorage.removeItem('visitorData');
@@ -262,7 +485,7 @@ function downloadVisitorData() {
 
 // 投票ページの初期化
 function initVotingPage() {
-    loadProjects();
+    // 修正: loadProjects()は不要（projectsは既に定義済み）
     currentVotes = [];
     
     // タブの初期化
@@ -288,6 +511,14 @@ function switchTab(category) {
     
     // 投票グリッドの更新
     updateVotingGrid(category);
+    
+    // 現在の選択状態を復元
+    currentVotes.forEach(vote => {
+        const selectedElement = document.querySelector(`[data-project-id="${vote.id}"]`);
+        if (selectedElement) {
+            selectedElement.classList.add('vote-selected');
+        }
+    });
 }
 
 // 投票グリッドの更新
@@ -321,7 +552,17 @@ function updateVotingGrid(category) {
 function vote(projectId, projectName) {
     if (currentVotes.length >= 3) return;
     
+    // 既に選択済みか確認
+    const alreadyVoted = currentVotes.some(vote => vote.id === projectId);
+    if (alreadyVoted) return;
+    
     currentVotes.push({ id: projectId, name: projectName });
+    
+    // 選択された要素に視覚的フィードバックを追加
+    const selectedElement = document.querySelector(`[data-project-id="${projectId}"]`);
+    if (selectedElement) {
+        selectedElement.classList.add('vote-selected');
+    }
     
     // 投票結果に記録
     if (!voteResults[projectId]) {
@@ -346,129 +587,86 @@ function updateVoteDisplay() {
 
 // 投票完了処理
 function completeVoting() {
+    // 投票結果を保存
+    localStorage.setItem('voteResults', JSON.stringify(voteResults));
+    
+    // 完了メッセージを表示
     const statusElement = document.getElementById('voting-status');
     if (statusElement) {
         statusElement.style.display = 'block';
-        statusElement.textContent = 'ご協力ありがとうございました！';
-        
-        setTimeout(() => {
-            statusElement.style.display = 'none';
-            currentVotes = [];
-            updateVoteDisplay();
-        }, 2000);
+        statusElement.textContent = 'ご協力ありがとうございました!';
     }
     
-    // 投票結果を保存
-    localStorage.setItem('voteResults', JSON.stringify(voteResults));
+    // DOMの更新を待ってから選択状態をクリア
+    setTimeout(() => {
+        document.querySelectorAll('.vote-selected').forEach(el => {
+            el.classList.remove('vote-selected');
+        });
+        currentVotes = [];
+        updateVoteDisplay();
+    }, 100);
+    
+    // 完了メッセージを非表示
+    setTimeout(() => {
+        if (statusElement) {
+            statusElement.style.display = 'none';
+        }
+    }, 2000);
 }
 
 // 投票取り消し
 function undoVote() {
-    if (currentVotes.length > 0 && currentVotes.length < 3) {
-        const lastVote = currentVotes.pop();
-        if (voteResults[lastVote.id]) {
-            voteResults[lastVote.id].votes--;
-            if (voteResults[lastVote.id].votes <= 0) {
-                delete voteResults[lastVote.id];
-            }
-        }
-        updateVoteDisplay();
-        localStorage.setItem('voteResults', JSON.stringify(voteResults));
-    }
-}
-
-// 投票作成ページの初期化
-function initVotingCreatePage() {
-    loadProjects();
-    updateProjectsList();
-    
-    // フォーム送信
-    const form = document.getElementById('project-form');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            addProject();
-        });
-    }
-}
-
-// プロジェクト追加
-function addProject() {
-    const name = document.getElementById('project-name').value;
-    const imageUrl = document.getElementById('project-image').value;
-    const category = document.getElementById('project-category').value;
-    
-    if (!name || !category) {
-        alert('企画名とカテゴリーは必須です。');
+    // 0票または3票完了時は取り消せない
+    if (currentVotes.length === 0 || currentVotes.length >= 3) {
         return;
     }
     
-    if (!projects[category]) {
-        projects[category] = [];
+    const lastVote = currentVotes.pop();
+    
+    // 選択状態を解除
+    const selectedElement = document.querySelector(`[data-project-id="${lastVote.id}"]`);
+    if (selectedElement) {
+        selectedElement.classList.remove('vote-selected');
     }
     
-    projects[category].push({
-        name: name,
-        imageUrl: imageUrl
-    });
+    // 投票結果から削除
+    if (voteResults[lastVote.id]) {
+        voteResults[lastVote.id].votes--;
+        if (voteResults[lastVote.id].votes <= 0) {
+            delete voteResults[lastVote.id];
+        }
+    }
     
-    // データを保存
-    localStorage.setItem('projects', JSON.stringify(projects));
-    
-    // フォームをリセット
-    document.getElementById('project-form').reset();
-    
-    // リストを更新
-    updateProjectsList();
-    
-    showNotification('企画を追加しました');
+    updateVoteDisplay();
+    localStorage.setItem('voteResults', JSON.stringify(voteResults));
+    showNotification('投票を取り消しました');
 }
 
-// プロジェクトリストの更新
-function updateProjectsList() {
-    const tbody = document.getElementById('projects-list-body');
-    if (!tbody) return;
-    
-    tbody.innerHTML = '';
-    let index = 1;
-    
-    Object.keys(projects).forEach(category => {
-        projects[category].forEach((project, projectIndex) => {
-            const row = tbody.insertRow();
-            row.insertCell(0).textContent = index++;
-            row.insertCell(1).textContent = project.name;
-            row.insertCell(2).textContent = project.imageUrl || '（なし）';
-            row.insertCell(3).textContent = getCategoryName(category);
-            
-            const actionsCell = row.insertCell(4);
-            const deleteBtn = document.createElement('button');
-            deleteBtn.textContent = '削除';
-            deleteBtn.className = 'btn-danger';
-            deleteBtn.onclick = () => deleteProject(category, projectIndex);
-            actionsCell.appendChild(deleteBtn);
-        });
-    });
-}
-
-// プロジェクト削除
-function deleteProject(category, index) {
-    if (confirm('この企画を削除しますか？')) {
-        projects[category].splice(index, 1);
-        localStorage.setItem('projects', JSON.stringify(projects));
-        updateProjectsList();
-        showNotification('企画を削除しました');
+// 修正: 投票作成ページの初期化（機能を無効化）
+function initVotingCreatePage() {
+    // 機能無効化メッセージを表示
+    const container = document.querySelector('.voting-admin .container');
+    if (container) {
+        container.innerHTML = `
+            <h1 style="text-align: center; color: #8e44ad; margin: 40px 0; font-size: 2.5em;">投票作成</h1>
+            <div class="admin-form">
+                <h2 style="color: #e74c3c; margin-bottom: 20px; text-align: center;">この機能は無効化されました</h2>
+                <p style="text-align: center; font-size: 18px; line-height: 1.8;">
+                    投票選択肢の追加・編集は、script.jsファイル内で直接行ってください。<br>
+                    詳しくはコード内のコメントを参照してください。
+                </p>
+            </div>
+        `;
     }
 }
 
-// カテゴリー名の取得
-function getCategoryName(category) {
-    const names = {
-        'high': '高校企画',
-        'middle': '中学企画',
-        'club': '部活サークル企画'
-    };
-    return names[category] || category;
-}
+// 修正: 以下の関数は使用されなくなったため削除またはコメントアウト
+/*
+function addProject() { ... }
+function updateProjectsList() { ... }
+function deleteProject(category, index) { ... }
+function getCategoryName(category) { ... }
+*/
 
 // 投票結果ページの初期化
 function initVotingResultPage() {
@@ -520,12 +718,12 @@ function updateResultsTable() {
     });
 }
 
-// 結果チャートの更新（簡易版）
+// 結果チャートの更新(簡易版)
 function updateResultsChart() {
     const chartContainer = document.getElementById('results-chart');
     if (!chartContainer) return;
     
-    chartContainer.innerHTML = '<h3>得票結果（上位5位）</h3>';
+    chartContainer.innerHTML = '<h3>得票結果(上位5位)</h3>';
     
     const sortedResults = Object.entries(voteResults).sort((a, b) => b[1].votes - a[1].votes).slice(0, 5);
     const maxVotes = sortedResults.length > 0 ? sortedResults[0][1].votes : 1;
@@ -554,7 +752,7 @@ function updateResultsChart() {
 
 // 投票結果のリセット
 function resetVoteResults() {
-    if (confirm('本当に投票結果をリセットしますか？この操作は元に戻せません。')) {
+    if (confirm('本当に投票結果をリセットしますか?この操作は元に戻せません。')) {
         voteResults = {};
         localStorage.removeItem('voteResults');
         updateResultsDisplay();
@@ -583,26 +781,10 @@ function downloadVoteResults() {
     document.body.removeChild(link);
 }
 
-// プロジェクトデータの読み込み
+// 修正: プロジェクトデータの読み込み（localStorageから読み込まない）
 function loadProjects() {
-    const saved = localStorage.getItem('projects');
-    if (saved) {
-        projects = JSON.parse(saved);
-    } else {
-        // デフォルトデータ
-        projects = {
-            high: [
-                { name: '高校企画サンプル1', imageUrl: '' },
-                { name: '高校企画サンプル2', imageUrl: '' }
-            ],
-            middle: [
-                { name: '中学企画サンプル1', imageUrl: '' }
-            ],
-            club: [
-                { name: '部活企画サンプル1', imageUrl: '' }
-            ]
-        };
-    }
+    // projectsは既にコード内で定義されているため、何もしない
+    // デフォルトデータの設定も不要
 }
 
 // 総来場者数の取得
@@ -638,6 +820,7 @@ function showNotification(message) {
 const btn = document.getElementById("toggleButton");
 const frame = document.getElementById("sheetFrame");
 
+if (btn && frame) {
     btn.addEventListener("click", () => {
       if (frame.style.display === "none" || frame.style.display === "") {
         frame.style.display = "block";
@@ -647,3 +830,4 @@ const frame = document.getElementById("sheetFrame");
         btn.textContent = "スプレッドシートを表示";
       }
     });
+}
